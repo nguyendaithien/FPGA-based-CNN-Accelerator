@@ -1,7 +1,5 @@
 # Yolo_v3_Tiny_AXI
-Author: 
-
-  **Nguyen Van Luu** - nluu1784@gmail.com
+Author:  **Nguyen Van Luu** - nluu1784@gmail.com
   
   Name of Institute: **School of Electrical and Electronic Engineering (SEEE)-HUST**    
 
@@ -24,7 +22,7 @@ data reuse strategy based on the amount of data processed
 by each layer is introduced to reduce off-chip memory traffic.
 Experiments on YOLOv3-tiny show that the proposed design
 achieves an inference speed of 15.88 FPS and a throughput of
-88.82 GOPS at a clock frequency of 230 MHz
+88.82 GOPS at a clock frequency of 230 MHz.
 # ARCHITECTURE OF SYSTEM
 ![YOLO Tiny Architecture](images/block_diagram.png)
 # Block design on Vivado
