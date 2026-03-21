@@ -24,6 +24,20 @@ by each layer is introduced to reduce off-chip memory traffic.
 Experiments on YOLOv3-tiny show that the proposed design
 achieves an inference speed of 15.88 FPS and a throughput of
 88.82 GOPS at a clock frequency of 230 MHz.
+
+# Simulation
+
+Firstly, let unzip parameter file in ./data/wgt.zip.
+```sh
+cd ./data
+unzip wgt.zip
+```
+We highly recommend to use Cadence tool for running simulation, if you use other tool, you should edit file makefile in folder run to math with your tool.
+```sh
+cd ./run
+make all
+```
+
 # ARCHITECTURE OF SYSTEM
 ![YOLO Tiny Architecture](images/block_diagram.png)
 # Block design on Vivado
