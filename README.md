@@ -82,7 +82,7 @@ OFM: 0000000000000000000000000000000012fc12ea12e9131512d2130d12de12e4
 
 # Block design on Vivado
 ![YOLO Tiny Architecture](images/VIVADO.jpg)
-![YOLO Tiny Architecture](images/WAVE_FORM.jpg)
+![YOLO Tiny Architecture](images/wave_form.jpg)
 # Performance & Power consumption and hardware ultilization
 ![YOLO Tiny Architecture](images/image.png)
 # Layout of chip on ZCU104
