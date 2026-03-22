@@ -86,7 +86,5 @@ OFM: 0000000000000000000000000000000012fc12ea12e9131512d2130d12de12e4
 ![YOLO Tiny Architecture](images/wave_form.jpg)
 # Layout of chip on ZCU104
 ![YOLO Tiny Architecture](images/layout.jpg)
-# Performance & Power consumption and hardware ultilization
-![YOLO Tiny Architecture](images/image.png)
 
 
