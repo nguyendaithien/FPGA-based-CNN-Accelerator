@@ -32,7 +32,7 @@ achieves an inference speed of 15.88 FPS and a throughput of
 ![YOLO Tiny Architecture](images/Overall_1.png)
 # Systolic array and data tiling strategy
 ![YOLO Tiny Architecture](images/Tiling_strategy.png)
-
+The above figure shows PE connection and input feature maps tiling strategy of design
 # Simulation
 * To perform simulation, we prepare a file named wgt.txt that contains all weights of the CONV1 layer in YOLOv3-tiny.
 * The input feature maps are generated using Python. Both datasets are calculated using a reference model implemented in the PyTorch framework. The script for this process is not included here.
