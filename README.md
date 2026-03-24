@@ -9,7 +9,7 @@ Author:  **Nguyen Van Luu** - nluu1784@gmail.com
 
   Language: **Verilog, Python**
 
-  Framework: **Keras, Pytorch**
+  Framework: **Pytorch**
   
   Tools: **Cadence Xcelium, Vivado**
 
