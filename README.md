@@ -19,20 +19,13 @@ Data generation script, detailed architecture and pipeline strategy will be soon
 
 
 # Introduction 
-* A systolic array is widely adopted in many deep
-neural network accelerators due to their structured dataflow and
-high parallelism. However, object detection models such as You
-Only Look Once (YOLO) introduce multi-scale feature maps and
-varying layer dimensions, which often lead to resource under
-utilization due to unnecessary bubble cycles. Firstly, this work
-proposes an enhanced systolic array architecture that integrates
-an effective dataflow mapping strategy with a multi-pipeline
-computing scheme to improve throughput. Secondly, a dynamic
-data reuse strategy based on the amount of data processed
-by each layer is introduced to reduce off-chip memory traffic.
-Experiments on YOLOv3-tiny show that the proposed design
-achieves an inference speed of 15.88 FPS and a throughput of
-88.82 GOPS at a clock frequency of 230 MHz.
+* Systolic arrays are widely used in deep neural network accelerators due to their regular dataflow and high parallelism. A 16×16 systolic array architecture is presented to accelerate CNN workloads. Modern CNNs introduce multi-scale feature maps and varying layer dimensions, which can lead to resource underutilization due to bubble cycles.
+* Input feature maps (IFMs) are streamed across the array, while weights are loaded in a structured manner. Partial sums are accumulated within each processing element (PE) until final output feature maps (OFMs) are generated and stored. Both IFMs and weights use 16-bit precision, and OFMs are also quantized to 16 bits.
+* An AXI interface is integrated to enable communication with off-chip memory, supporting a 128-bit data width and burst lengths of up to 256 beats.
+* An efficient dataflow mapping strategy and a multi-stage pipeline are applied to hide off-chip memory latency and improve throughput. IFMs of size Cin×18×18 are first loaded into on-chip cache and then fed into a double-buffer structure. Weights are loaded sequentially; for example, 64 input channels require four loading iterations with 16 filters each time.
+* The architecture supports convolution and max-pooling operations, flexible kernel sizes, and various IFM shapes. Currently, stride = 1 and padding = 1 are supported, with future extensions planned.
+
+
 # ARCHITECTURE OF SYSTEM
 * In this design, a 16×16 systolic array is proposed with a multi-level pipeline across load, compute, and write-back stages. In particular, a dual-lane data path is employed to hide memory access latency and enhance throughput. The design also integrates an AXI interface to communicate with off-chip memory; a DRAM model with an AXI interface is used for simulation. Overall, the architecture includes IFM/OFM caches for data preloading, IFM/weight ping-pong buffers located near the systolic array, as well as activation function and max-pooling blocks.
 ![YOLO Tiny Architecture](images/Overall_1.png)
