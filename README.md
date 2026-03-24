@@ -33,7 +33,7 @@ Data generation script, detailed architecture and pipeline strategy will be soon
 * The figure above shows the PE connections and the input feature map tiling strategy. Each IFM tile has a size of C_in × 18 × 18, while each filter contains all kernel weights and is loaded into a buffer.
 * For example, with a kernel size of 3, padding of 1, and 3 input channels, each tile produces output feature maps of size 3 × 16 × 16. After max-pooling, the output size becomes 3 × 8 × 8.
 ![YOLO Tiny Architecture](images/Tiling_strategy.png)
-
+* This design divides the workload into three tasks: LOAD, COMPUTE, and WRITE. Each task operates on a primitive IFM tile. These tasks are pipelined with the support of a ping-pong buffer and a specialized PE architecture.
 <p align="center">
   <img src="images/timing.png" alt="YOLO Tiny Architecture">
 </p>
