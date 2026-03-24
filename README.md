@@ -13,7 +13,11 @@ Author:  **Nguyen Van Luu** - nluu1784@gmail.com
   
   Tools: **Cadence Xcelium, Vivado**
 
-  Status: **Data generation script, detailed architecture and pipeline strategy will be soon updated**
+  ## *<span style="font-size: 24px;">Status:</span>*  
+**Data generation script, detailed architecture and pipeline strategy will be soon updated**
+
+
+
 # Introduction 
 * A systolic array is widely adopted in many deep
 neural network accelerators due to their structured dataflow and
