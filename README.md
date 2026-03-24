@@ -30,8 +30,11 @@ Data generation script, detailed architecture and pipeline strategy will be soon
 * Overall, the architecture includes IFM/OFM caches for data preloading, IFM/weight ping-pong buffers located near the systolic array, as well as activation function and max-pooling blocks.
 ![YOLO Tiny Architecture](images/Overall_1.png)
 # Systolic array and data tiling strategy
+The figure above shows the PE connections and the input feature map tiling strategy. Each IFM tile has a size of C_in × 18 × 18, while each filter contains all kernel weights and is loaded into a buffer.
+
+For example, with a kernel size of 3, padding of 1, and 3 input channels, each tile produces output feature maps of size 3 × 16 × 16. After max-pooling, the output size becomes 3 × 8 × 8.
 ![YOLO Tiny Architecture](images/Tiling_strategy.png)
-The above figure shows PE connection and input feature maps tiling strategy of design
+
 # Simulation
 * To perform simulation, we prepare a file named wgt.txt that contains all weights of the CONV1 layer in YOLOv3-tiny.
 * The input feature maps are generated using Python. Both datasets are calculated using a reference model implemented in the PyTorch framework. The script for this process is not included here.
